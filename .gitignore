@@ -44,14 +44,12 @@ project.assets.json
 *.pfx
 *.p12
 
-# Entity Framework Migrations
-migrations/
+# Entity Framework Migrations (keep generated migrations in source control)
 
 # --- ANGULAR / TypeScript ---
 node_modules/
 dist/
 coverage/
-package-lock.json
 yarn.lock
 pnpm-lock.yaml
 .npmrc
@@ -79,6 +77,10 @@ out-tsc/
 .env
 .env.local
 .env.*.local
+
+# Local screenshot capture scripts (not part of the deliverable)
+scripts/capture-screenshots.mjs
+scripts/capture-logs-screenshot.mjs
 
 # Tests
 karma.conf.js

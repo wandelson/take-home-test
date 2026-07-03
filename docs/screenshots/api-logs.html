@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { margin: 0; background: #0d1117; padding: 24px; font-family: "DejaVu Sans Mono", "Consolas", monospace; }
+    pre { color: #c9d1d9; font-size: 13px; line-height: 1.5; margin: 0; white-space: pre-wrap; }
+    h1 { color: #58a6ff; font-family: sans-serif; font-size: 16px; margin: 0 0 16px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>fundo-api — Serilog request &amp; domain logs</h1>
+  <pre>fundo-api  | [03:19:40 INF] [] Seeded 4 loans into the database.
+fundo-api  | [03:20:05 INF] [e5f32e631eeb8af2c4ae6ccba9e18ed1] Login succeeded for user admin
+fundo-api  | [03:20:05 INF] [e5f32e631eeb8af2c4ae6ccba9e18ed1] HTTP POST /auth/login responded 200 in 610.6559 ms
+fundo-api  | [03:20:06 INF] [510e5a83f791a2d5b96a80008fbe71af] HTTP GET /loans responded 200 in 136.3061 ms
+fundo-api  | [03:20:06 INF] [ce918d0d1a8cda98a7c35b266b7f1b49] Domain event PaymentRecordedEvent for loan 44444444-4444-4444-4444-444444444444: amount 100, remaining 32400.00, paidInFull False
+fundo-api  | [03:20:06 INF] [ce918d0d1a8cda98a7c35b266b7f1b49] Payment 100 recorded for loan 44444444-4444-4444-4444-444444444444
+fundo-api  | [03:20:06 INF] [ce918d0d1a8cda98a7c35b266b7f1b49] HTTP POST /loans/44444444-4444-4444-4444-444444444444/payment responded 200 in 130.3950 ms
+fundo-api  | [03:20:06 INF] [f0978a6d92ee2aba23eb5d2961f0c592] HTTP GET /loans responded 200 in 11.0718 ms</pre>
+</body>
+</html>

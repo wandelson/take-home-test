@@ -1,0 +1,39 @@
+<main class="login">
+  <section class="login__card">
+    <h1>Loan Management</h1>
+    <h2>Sign in</h2>
+    @if (!environment.production) {
+      <p class="login__hint">Demo credentials: admin / admin123</p>
+    }
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" autocomplete="username" data-testid="login-username" />
+        @if (usernameError()) {
+          <mat-error>{{ usernameError() }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" autocomplete="current-password" data-testid="login-password" />
+        @if (passwordError()) {
+          <mat-error>{{ passwordError() }}</mat-error>
+        }
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit" [disabled]="pending()" data-testid="login-submit">
+        @if (pending()) {
+          <mat-spinner diameter="20"></mat-spinner>
+        } @else {
+          Sign in
+        }
+      </button>
+    </form>
+
+    @if (loginError) {
+      <p class="login__error" role="alert">{{ loginError }}</p>
+    }
+  </section>
+</main>
